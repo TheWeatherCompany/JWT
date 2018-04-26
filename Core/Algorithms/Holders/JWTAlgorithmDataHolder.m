@@ -59,10 +59,10 @@
 - (NSData *)dataFromString:(NSString *)string {
     NSData *result = [self.internalStringCoder dataWithString:string];
     
-    if (result == nil) {
-        // tell about it?!
-        NSLog(@"%@ %@ something went wrong. Data is not base64encoded! %@", self.debugDescription, NSStringFromSelector(_cmd), string);
-    }
+//    if (result == nil) {
+//        // tell about it?!
+//        NSLog(@"%@ %@ something went wrong. Data is not base64encoded! %@", self.debugDescription, NSStringFromSelector(_cmd), string);
+//    }
     
     return result;// ?: [string dataUsingEncoding:NSUTF8StringEncoding];
 }
@@ -70,9 +70,9 @@
 - (NSString *)stringFromData:(NSData *)data {
     NSString *result = [self.internalStringCoder stringWithData:data];
     
-    if (result == nil) {
-        NSLog(@"%@ %@ something went wrong. String is not base64encoded", self.debugDescription, NSStringFromSelector(_cmd));
-    }
+//    if (result == nil) {
+//        NSLog(@"%@ %@ something went wrong. String is not base64encoded", self.debugDescription, NSStringFromSelector(_cmd));
+//    }
     return result ?: [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 @end
